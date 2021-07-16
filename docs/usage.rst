@@ -21,8 +21,8 @@ Eg.:
 
     class MyModelListCreateView(generics.ListCreateAPIView):
         queryset = MyModel.objects.all()
-        read_serializer_class = MyModelReadSerializer
-        write_serializer_class = MyModelWriteSerializer
+        read_serializer_class = MyReadSerializer
+        write_serializer_class = MyWriteSerializer
 
 
 If you need to dynamically override the serializers you can override the
@@ -51,4 +51,4 @@ Eg.:
     class MyModelListCreateView(generics.ListCreateAPIView):
         queryset = MyModel.objects.all()
         # this still works the way it works with DRF ListCreateAPIView
-        serializer_class = MyModelWriteSerializer
+        serializer_class = MyWriteSerializer
